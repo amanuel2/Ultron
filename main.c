@@ -29,7 +29,7 @@ void unrecognizedCommand(RunningCommand *c, void *ctx) {
 }
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    // insert code here..
     puts("Starting...");
 #ifdef DEBUG
     puts("Debug mode is active.  Messages will not be posted to the chat room.");
@@ -90,8 +90,7 @@ int main(int argc, const char * argv[]) {
 
     ChatBot *bot = createChatBot(room, commands);
 
-    //if(post.message.value == "Hello World")
-        postMessage(bot->room, "Hello Wold");
+postMessage(bot->room, "Ultron Engaged!");
 
 
     puts("Started.");
