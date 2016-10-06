@@ -34,4 +34,28 @@ void helloWorld (RunningCommand *command, void *ctx)
     return;
 }
 
+void pingUsers (RunningCommand *command, void *ctx)
+{
+    ChatBot *bot = ctx;
+    if (command->argc < 2)
+    {
+        postReply (bot->room, "**Usage:** `@Ultron ping <username> <number>`", command->message);
+        return;
+    }
+    
+    char *username = command->argv [0];
+    int num = strtol (command->argv [1], NULL, 10);
+    char *str;
+    
+    for (unsigned i = 0; i < num; i ++)
+    {
+        //char *str;
+        asprintf (&str, "@%s", username);
+        postMessage (bot->room, str);
+    }
+    
+    free (str);
+    return;
+}
+
 #endif /* misc_commands_h */
