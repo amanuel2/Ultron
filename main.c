@@ -82,6 +82,7 @@ int main(int argc, const char * argv[]) {
         createCommand("reboot", rebootBot),
         createCommand("kill", forceStopBot),
         createCommand("hw", helloWorld),
+        createCommand("ping ... ...", pingUsers),
         NULL
     };
 
